@@ -12,7 +12,7 @@ export default createGlobalStyle`
 }
 body{
   -webkit-font-smoothing: antialiased !important;
-  background : #ebf2f5;
+  background : #181A1B;
 }
 body,input,button{
   font-size : 16px;
