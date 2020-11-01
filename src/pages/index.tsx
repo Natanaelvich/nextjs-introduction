@@ -1,3 +1,4 @@
+import SEO from "@/components/Description/SEO";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { Container, List, Title } from "../styles/pages/Home";
@@ -14,14 +15,7 @@ interface Homeprops {
 export default function Home({ recommendedProducts }: Homeprops) {
   return (
     <Container>
-      <Head>
-        <title>Nextjs introduction</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <SEO title="DevCommerce, your best e-commerce!" image="embed.jpg" />
 
       <Title>NEXT JS⚡⚡</Title>
 
