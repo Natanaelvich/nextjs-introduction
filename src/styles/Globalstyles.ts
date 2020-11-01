@@ -19,10 +19,18 @@ body,input,button{
   font-family: 'Roboto', serif;
 }
 h1,h2,h3,h4,h5,h6 strong{
+  font-weight : 500;
+  color :#7159c1;
+}
+p{
   font-weight : 400;
 }
 a{
   text-decoration : none;
+  color : #fff;
+}
+p{
+    color : #fff;
 }
 ul{
   list-style : none;
