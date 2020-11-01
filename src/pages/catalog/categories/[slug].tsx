@@ -1,7 +1,7 @@
 import React from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { Container, List } from "../../../styles/pages/Home";
+import { Container, List } from "@/styles/pages/Home";
 
 interface ICateogory {
   id: string;
