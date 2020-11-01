@@ -1,12 +1,13 @@
 {
   "categories": [
     { "id": "camisetas", "title": "Camisetas" },
-    { "id": "calcas", "title": "Calças" }
+    { "id": "calcas", "title": "Calças" },
+    { "id": "meias", "title": "Meias" }
   ],
   "products": [
     {
       "id": 1,
-      "title": "Camiseta Front-end",
+      "title": "Camiseta Front-ends",
       "price": 79.9,
       "category_id": "camisetas",
       "slug": "camiseta-front-ends"
@@ -31,6 +32,13 @@
       "price": 109.9,
       "category_id": "calcas",
       "slug": "calca-azul-react"
+    },
+    {
+      "id": 4,
+      "title": "Meia do React",
+      "price": 109.9,
+      "category_id": "meias",
+      "slug": "meia-react"
     }
   ],
   "recommended": [

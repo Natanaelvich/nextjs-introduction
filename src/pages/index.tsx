@@ -15,7 +15,7 @@ export default function Home({ recommendedProducts }: Homeprops) {
   return (
     <Container>
       <Head>
-        <title>Create Next App</title>
+        <title>Nextjs introduction</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
@@ -38,7 +38,6 @@ export const getServerSideProps: GetServerSideProps<Homeprops> = async () => {
   const response = await fetch("http://localhost:3333/recommended");
 
   const recommendedProducts = await response.json();
-  console.log(recommendedProducts);
   return {
     props: {
       recommendedProducts,
