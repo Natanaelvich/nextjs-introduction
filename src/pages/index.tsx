@@ -18,6 +18,8 @@ export default function Home({ recommendedProducts }: Homeprops) {
 
       <Title>NEXT JS⚡⚡</Title>
 
+      <h1>Produtos recomendados</h1>
+
       <List>
         {recommendedProducts.map((p) => (
           <li key={p.id}>
@@ -27,6 +29,15 @@ export default function Home({ recommendedProducts }: Homeprops) {
           </li>
         ))}
       </List>
+
+      <div>
+        <Link href="/search">
+          <a>Buscar produtos</a>
+        </Link>
+        <Link href="/categories">
+          <a>categorias</a>
+        </Link>
+      </div>
     </Container>
   );
 }

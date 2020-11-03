@@ -23,12 +23,15 @@ const Category: React.FC<Homeprops> = ({ products }) => {
       <List>
         {products.map((p) => (
           <li key={p.id}>
-            <Link href={`catalog/product/${p.uid}`}>
+            <Link href={`/catalog/product/${p.uid}`}>
               <a>{RichText.asText(p.data.title)}</a>
             </Link>
           </li>
         ))}
       </List>
+      <Link href="/">
+        <a>Voltar para Home</a>
+      </Link>
     </Container>
   );
 };

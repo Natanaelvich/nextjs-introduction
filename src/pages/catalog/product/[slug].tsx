@@ -6,6 +6,7 @@ import Prismic from "prismic-javascript";
 import { clientPrismic } from "@/lib/prismic";
 import { Document } from "prismic-javascript/types/documents";
 import { RichText } from "prismic-dom";
+import Link from "next/link";
 
 interface IProduct {
   product: Document;
@@ -29,6 +30,9 @@ const Product: React.FC<IProduct> = ({ product }) => {
       ></div>
 
       <p>Price : ${product.data.price}</p>
+      <Link href="/">
+        <a>Voltar para Home</a>
+      </Link>
     </Container>
   );
 };

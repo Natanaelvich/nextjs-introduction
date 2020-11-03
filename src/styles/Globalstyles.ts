@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   *{
@@ -37,5 +37,7 @@ ul{
 }
 button{
   cursor: pointer;
+  border : 0;
+  background : transparent;
 }
 `;
