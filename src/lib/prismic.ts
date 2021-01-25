@@ -1,9 +1,9 @@
-import Prismic from 'prismic-javascript'
+import Prismic from "prismic-javascript";
 
-export const apiEndpoint = 'https://devcommercenatanael.cdn.prismic.io/api/v2'
+export const apiEndpoint = "https://devcommercenatanael.cdn.prismic.io/api/v2";
 
-export const clientPrismic = (req = null) =>{
-    const options =req ? {req} : null
+export const clientPrismic = (req = null) => {
+  const options = req ? { req } : null;
 
-    return Prismic.client(apiEndpoint, options)
-}
+  return Prismic.client(apiEndpoint, options);
+};
