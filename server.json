@@ -55,6 +55,13 @@
       "price": 109.9,
       "category_id": "calcas",
       "slug": "calca-azul-react"
+    },
+    {
+      "id": 3,
+      "title": "Meias azul do Vujs",
+      "price": 109.9,
+      "category_id": "meias",
+      "slug": "meias-azul-vuejs"
     }
   ]
 }
