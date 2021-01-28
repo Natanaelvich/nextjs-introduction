@@ -49,7 +49,6 @@ export const getServerSideProps: GetServerSideProps<Homeprops> = async () => {
     await fetch("http://localhost:3333/recommended")
   ).json();
 
-  console.log(recommendedProducts);
   return {
     props: {
       recommendedProducts,
