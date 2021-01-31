@@ -1,4 +1,4 @@
-import SEO from "@/components/Description/SEO";
+import SEO from "@/components/SEO";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Container, List, Title } from "../../styles/pages/Home";
 import Link from "next/link";
@@ -52,7 +52,7 @@ export default function categories({ products }: Homeprops) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const categories = await (
-    await fetch(`http://localhost:3333/categories`)
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
   ).json();
 
   const paths = categories.map((c: Category) => ({
@@ -69,7 +69,9 @@ export const getStaticProps: GetStaticProps<Homeprops> = async ({ params }) => {
   const { slug } = params;
 
   const products = await (
-    await fetch(`http://localhost:3333/products?category_id=${slug}`)
+    await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/products?category_id=${slug}`
+    )
   ).json();
 
   return {

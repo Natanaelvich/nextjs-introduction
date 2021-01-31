@@ -1,4 +1,4 @@
-import SEO from "@/components/Description/SEO";
+import SEO from "@/components/SEO";
 import { GetServerSideProps } from "next";
 import { Container, List, Title } from "../styles/pages/Home";
 import Prismic from "prismic-javascript";

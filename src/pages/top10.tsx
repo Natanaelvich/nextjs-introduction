@@ -1,4 +1,4 @@
-import SEO from "@/components/Description/SEO";
+import SEO from "@/components/SEO";
 import { GetStaticProps } from "next";
 import { Container, List, Title } from "../styles/pages/Home";
 import Link from "next/link";
@@ -46,7 +46,7 @@ export default function top10({ recommendedProducts }: Homeprops) {
 
 export const getStaticProps: GetStaticProps<Homeprops> = async () => {
   const recommendedProducts = await (
-    await fetch("http://localhost:3333/products")
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
   ).json();
 
   return {
