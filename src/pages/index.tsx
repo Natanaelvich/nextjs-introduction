@@ -1,7 +1,14 @@
-import SEO from "@/components/Description/SEO";
+import SEO from "@/components/SEO";
 import { GetServerSideProps } from "next";
 import { Container, List, Title } from "../styles/pages/Home";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+const ModalAddToCart = dynamic(() => import("@/components/ModalAddToCart"), {
+  loading: () => <p>Carregando...</p>,
+  ssr: false,
+});
 
 interface Product {
   id: number;
@@ -14,6 +21,22 @@ interface Homeprops {
 }
 
 export default function Home({ recommendedProducts }: Homeprops) {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  async function handleSum() {
+    const { sum } = await import("../lib/math");
+
+    const result = sum(2, 2);
+
+    console.log(result);
+
+    return result;
+  }
+
+  async function addToCart() {
+    setModalVisible(!modalVisible);
+  }
+
   return (
     <Container>
       <SEO title="DevCommerce, your best e-commerce!" image="embed.jpg" />
@@ -40,13 +63,19 @@ export default function Home({ recommendedProducts }: Homeprops) {
           <a>categorias</a>
         </Link>
       </div>
+      <button onClick={handleSum}>Somar (import dynaminc)</button>
+      <button onClick={addToCart}>
+        Mostrar Modal (import dynaminc components)
+      </button>
+
+      {modalVisible && <ModalAddToCart />}
     </Container>
   );
 }
 
 export const getServerSideProps: GetServerSideProps<Homeprops> = async () => {
   const recommendedProducts = await (
-    await fetch("http://localhost:3333/recommended")
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recommended`)
   ).json();
 
   return {
