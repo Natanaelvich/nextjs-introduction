@@ -18,7 +18,9 @@ export default function SEO({
   const pageTitle = `${title} ${
     !shouldExcludeTitleSuffix ? "| DevCommerce" : ""
   }`;
-  const pageImage = image ? `http://localhost:3000/${image}` : null;
+  const pageImage = image
+    ? `${process.env.NEXT_PUBLIC_API_URL}/${image}`
+    : null;
   return (
     <Head>
       <title>{pageTitle}</title>
